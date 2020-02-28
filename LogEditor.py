@@ -89,12 +89,3 @@ class LogFile():
         logs_sheet["F" + str(current_cell_number)] = details
 
         open_excel.save(self.log_file_path)
-
-
-
-
-# Log = LogFile()
-# Log.create_log_directory()
-# Log.create_log_xlsx_file()
-
-# Log.insert_to_log("Ping taramsı", "12/03/2020", "13:00", "13:50", "Ping başarılıdır.", 2)
