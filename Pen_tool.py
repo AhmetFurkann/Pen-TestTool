@@ -333,53 +333,8 @@ class PenTool:
 
         return string
 
-        # def xss_vul_scan(self, host, browser):
-        #
-        #     print("Checking :", browser.geturl())
-        #     forms = browser.forms()
-        #     ret, browser = self.login_check(host)
-        #     if ret:
-        #         print("{0} url adresi bir 'Giriş' sayfasıdır!\n"
-        #               "--Bu URL için XSS zaafiyet taraması yapmak istemiyorsanız giriş adımına yönlendirileceksiniz!--\n"
-        #               "XSS taraması yapılsın mı ? (e/h) -->  ".format(host), end="")
-        #         control_input = self.input_check("e", "h")
-        #         if control_input == "e":
-        #             ret = self.xss_vul_check(host.)
-
-    # def xss_vul_check(self, host, browser):
-    #
-    #     browser = webdriver.Firefox()
-    #     browser.get(host)
-    #     element = browser.find_element_by_id("passwd-id")
-    #     print(element)
-
-        # orj_response = browser.open(host).read().decode("utf-8")
-        # print("Checking :", browser.geturl())
-        # forms = browser.forms()
-        # print("XSS Zaafiyet Taraması başlatılıyor...")
-        # for num_form, form in enumerate(forms):
-        #     for control in form.controls:
-        #         if control.type == "text":
-        #             browser.select_form(nr=num_form)  # Aldığım hatanın ana nedeni burasıdır.
-        #             browser.form[control.name] = "<script>alert(123)</script>"  # SQL Injection zaafiyetini kontrol sözcüğüdür.
-        #             response = browser.submit()
-        #             print("Current url = ", browser.geturl())
-        #             response = response.read().decode("utf-8")
-        #             print(response)
-        #             # print(type(orj_response), "---", type(response))
-        #             # for letter in difflib.ndiff(orj_response, response):
-        #                 # print(letter, end="")
-        #             # print(response)
-        #             # print(difflib.ndiff(orj_response, response))
-
-    #
-    # def xss_attack(self, host):
-    #
-    #     xss_vulnerable_urls = list()
-    #
-
 if __name__ == "__main__":
-    #
+    
     test_tool = PenTool()
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--ping", help= "Lütfen IP adresi veya domain adresi giriniz : ")
@@ -568,21 +523,3 @@ if __name__ == "__main__":
         print("[ÇAL.ZAM] {0}s içerisinde tamamlandı!".format(str(time.time() - run_time)[0:4]))
         finished_time = datetime.datetime.now().strftime("%H:%M:%S")
         print("[ZAMAN-BİLGİ] KONSOL BİTİŞ ZAMANI : {0} - {1}".format(date, finished_time))
-
-
-        # started_time = datetime.datetime.now().strftime("%H:%M:%S")
-        # date = datetime.datetime.now().strftime("%d/%m/%Y")
-        # print("INFO", args.xssvul)
-
-        # test_tool.xss_vul_check()
-
-    # print(test_tool.ping("192.168.56.101"))
-    # test_tool.port_scan(host="192.168.56.101", start_port=0, stop_port=30000, thread_numbers=10000)
-    #test_tool.partion_port_number(0, 30000, 11)
-    # vulnerable_urls, browser = test_tool.sql_injection("http://192.168.56.101/dvwa/login.php")
-    # test_tool.sql_exploit(vulnerable_urls, browser)
-    # test_tool.sql_perform()
-    # test_tool.sql_injection_vul_check()
-    #test_tool.sqli_vul_check("http://192.168.56.101/dvwa/vulnerabilities/sqli/")
-    # print(test_tool.login_check("http://192.168.56.101/dvwa/vulnerabilities/sqli/"))
-    # test_tool.get_links_from_page()
