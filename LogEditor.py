@@ -14,7 +14,7 @@ class LogFile():
         self.date = datetime.datetime.today().strftime('%d-%m-%Y')
         self.log_file_name = "Log[{0}].xlsx".format(self.date)
         self.log_file_path = os.path.join(self.log_dir_path, self.log_file_name)
-        # Aşağıdaki iki kod satırı dizin ve dosyayı oluşturmaktadır.
+        # The following two lines of code creates a directory and xlsx log file.
         self.create_log_directory()
         self.create_log_xlsx_file()
 
@@ -35,11 +35,8 @@ class LogFile():
         try:
             if self.log_file_name not in os.listdir(self.log_dir_path):
                 os.chdir(self.log_dir_path)
-                # date = datetime.datetime.now().strftime("%d/%m/%Y")
-                # date = str(date)
-                # name = "Log-{0}-.xlsx".format(date)
-                workbook = xlsxwriter.Workbook(self.log_file_name)  # In other version we can seperate the workbook class
-                worksheet = workbook.add_worksheet("Logs")  # create_log_file should take a instance and use it
+                workbook = xlsxwriter.Workbook(self.log_file_name)  # In future version the workbook class can be seperated.
+                worksheet = workbook.add_worksheet("Logs")
                 worksheet.set_column(0, 3, 25)
                 worksheet.set_column(3, 5, 35)
                 worksheet.write("A1", "İşlem Kimliği")
@@ -80,7 +77,7 @@ class LogFile():
             if logs_sheet.cell(row=cell_number, column=1).value == None:
                 current_cell_number = cell_number
                 break
-        # print(current_cell_number)
+
         logs_sheet["A" + str(current_cell_number)] = process_name
         logs_sheet["B" + str(current_cell_number)] = process_statu
         logs_sheet["C" + str(current_cell_number)] = date
